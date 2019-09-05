@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="WWei"><title>嘟嘟喵喵小白秋裤</title><meta name="description" content="没有困难创造困难~"><meta name="keywords" content="GO,PHP,K8S,Docker,Kubernetes,Istio,项目管理,创业,生活"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title><a href="/">嘟嘟喵喵小白秋裤</a></h3><div class="description"><p>没有困难创造困难~</p></div></div></div><ul class="social-links"><li><a href="http://github.com/lyzhang1999"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div><script async src="https://www.googletagmanager.com/gtag/js?id=UA-35043271-2"></script><script type="text/javascript">window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-35043271-2');</script></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a class="current" href="/">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li></div><div class="avatar"><img src="/images/logo.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/孤儿进程是什么/">孤儿进程是什么</a></h3></div><div class="post-content"><p>孤儿进程：一个父进程退出，而他的一个或者多个子进程还在运行，那么这些子进程将成为孤儿。孤儿将被 init 进程收养，并由 init 进程完成状态收集的工作。
+</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/如何预估一个mysql语句的性能？/">如何预估一个mysql语句的性能？</a></h3></div><div class="post-content"><p>使用 explain 分析
+重点关注：
+
+type 如果等于 all ，说明是全表扫描，需要优化。其他取值有：ref、range、index 等，遵循：ALL &lt; index &lt; range ~ index_merge &lt; ref &lt; eq_ref &lt; const &lt; syst...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/微服务，A服务请求B服务B1接口，B1接口又请求A服务A2接口。会不会有问题？/">微服务，A服务请求B服务B1接口，B1接口又请求A服务A2接口。会不会有问题？</a></h3></div><div class="post-content"><p>实现上来说没有问题。但是不合理。如果微服务按照这种拆分方式，允许B往上层调用A，那么会出现循环依赖的问题，违背了微服务的设计原则：微服务之间不允许出现循环依赖和调用。并且出现这种情况的时候，想要更新任何一个服务都会变得困难，最后的结果就是，整个系统会成为一个分布式的单体应用，没有做到每个微服务必须是独立的要求。其...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/拥塞控制及对应方法的使用场景/">拥塞控制及对应方法的使用场景</a></h3></div><div class="post-content"><p>
+慢启动
+指数增长
+
+
+拥塞避免
+线性增长
+
+
+拥塞发生
+发现丢包，指数回退；超时重传和快速重传
+
+
+快速恢复
+如果触发了快速重传，那么后续会触发快速恢复
+
+
+
+</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/数据库分表的方法？/">数据库分表的方法</a></h3></div><div class="post-content"><p>
+Mysql 中可以使用 merge 进行分表，分为子表和总表，总表相当于几个字表的外壳。对应用程序几乎透明。插入数据的时候可以根据配置将数据插入到子表上。
+
+也可以自己建立分表的规则，比如按照ID的范围拆分表或者时间范围拆分表都可以，在业务逻辑里增加固定的规则比如计算 mod 除余的 hash 得到对应的 id...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/死锁及如何避免/">死锁及如何避免</a></h3></div><div class="post-content"><p>在并发程序中，避免了逻辑中出现复数个线程互相持有对方线程所需要的独占锁的的情况，就可以避免死锁。
+死锁的四个条件
+互斥请求
+请求与保持条件
+不剥脱条件
+循环等待条件
+
+简化来说，就是独占锁和循环等待条件两个条件。
+</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/水平触发和边沿触发的区别/">Socket水平触发和边沿触发的区别</a></h3></div><div class="post-content"><p>水平触发(LT)如果文件描述符已经就绪可以非阻塞执行 IO 操作了，此时会触发通知，允许在任意时刻重复检测 IO 的状态，SELECT，POLL 就属于水平触发
+另外一种描述：如果文件描述符上可以非阻塞地执行I/O系统调用，此时认为它已经就绪，触发通知
+边缘触发(ET)如果该文件描述符自上次状态改变后有新的 IO...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/组合索引的应用/">组合索引的应用</a></h3></div><div class="post-content"><p>
+单独建立索引的效率小于组合索引。
+Mysql 只使用一个索引，如果 where 使用了索引的话，那么 order_by 中的列是不会使用索引的。如果有多个列的排序，那么尽可能创建复合索引。
+where 有多个条件的时候，可以建立组合索引
+
+</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/设计一个任务定时器，给定时间和任务，到时间了自动执行对应的任务/">设计一个任务定时器，给定时间和任务，到时间了自动执行对应的任务</a></h3></div><div class="post-content"><p>时间轮实现一个循环队列，类似表盘，假设走完一圈是 8S ，每个格子指向一个任务，时间无限循环，每转到一个格子，就扫描对应格子的所有任务，把时间到期的任务取出来执行，除此之外，每个任务需要记录圈数，每转1圈就减1，减到0就取出来执行。
+DelayQueueJAVA 可以使用 DelayQueue 实现。
+利用 RE...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/计算机网络5层协议/">计算机网络5层协议</a></h3></div><div class="post-content"><p>
+物理层
+传输单位是比特，任务是透明的传送比特流。
+
+
+数据链路层
+将数据组成帧，在不同的节点之间透明的传输数据，每一帧数据包含一些必要的控制信息如：同步信息、地址信息、差错控制等。
+
+
+网络层
+主要任务是：为分组网络的不同主机提供通信服务、选择合适的路由和协议，找到网络中的目标主机。
+将数据帧组成包进行传送。
+...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/page/5/">上一页</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/page/7/">下一页</a></li></ul></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>

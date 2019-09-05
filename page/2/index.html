@@ -1,8 +1,65 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="WWei"><title>嘟嘟喵喵小白秋裤</title><meta name="description" content="没有困难创造困难~"><meta name="keywords" content="GO,PHP,K8S,Docker,Kubernetes,Istio,项目管理,创业,生活"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title><a href="/">嘟嘟喵喵小白秋裤</a></h3><div class="description"><p>没有困难创造困难~</p></div></div></div><ul class="social-links"><li><a href="http://github.com/lyzhang1999"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div><script async src="https://www.googletagmanager.com/gtag/js?id=UA-35043271-2"></script><script type="text/javascript">window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'UA-35043271-2');</script></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a class="current" href="/">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li></div><div class="avatar"><img src="/images/logo.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/01/MYSQL业务熔断方案/">PHP+Mysql 熔断方案</a></h3></div><div class="post-content"><p>
-MYSQL 高并发情况下的数据库层的熔断方案，避免业务雪崩
+gtag('config', 'UA-35043271-2');</script></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a class="current" href="/">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li></div><div class="avatar"><img src="/images/logo.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/Redis 的数据类型和使用场景/">Redis 的数据类型和使用场景</a></h3></div><div class="post-content"><p>stringkey-value 模型，应用场景：
 
-读写分离主库、从库设置后，可用中间件完成对查询、写入的自动分流，对业务系统透明
-loose_max_statement_time用于控制 MYSQL 最长查询时间，如果超过该参数设置的值，那么会自动失败，默认不限制，对业务逻辑复杂的慢查询并发情况下会...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-01</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Mysql/" title="Mysql">Mysql </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/07/06/Ubnt unifi 企业组网/">Ubnt Unifi 企业组网的坑</a></h3></div><div class="post-content"><p>公司网络升级，新的网络拓扑结构为：H3C ER3260G2H3C S5120V228P-LIUBNT UniFi UAP-AC-PRO * 5通过 Wifi 连接，一直有丢包和 Ping 值高的问题，通过路由器 Ping 外网，延迟正常，可以判断是设备端-&gt;AP端延迟大，可以通过以下方式尝试优化：在优化之前...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-07-06</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Unifi/" title="Unifi">Unifi </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/">上一页</a></li></ul></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
+单独存储 Mysql 字段值，如 key 对应用户id，value 对应值
+存储 json 对象
+
+Hash是一个 string 类型的 field 和 value 的映射表，适合存储对象。应用场景：
+
+将每一条 Mysql 记录存到 Hash 记录
+
+List...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/UDP有拥塞控制吗？如何解决？/">UDP有拥塞控制吗？如何解决？</a></h3></div><div class="post-content"><p>使用 RTP ，基于 UDP，提供 QOS 服务质量控制。
+</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/TCP如何保证传输的可靠性/">TCP如何保证传输的可靠性</a></h3></div><div class="post-content"><p>
+校验和
+序列号
+对数据进行了编号
+
+
+确认应答
+每次接收方接收到数据之后，就会对传输方进行应答
+
+
+超时重传
+发送方在发送完数据之后，如果一定的时间没有收到来自接收方的 ACK ，那么对刚才发送的数据进行重新发送
+
+
+连接管理
+三次握手，四次挥手
+
+
+流量管理
+滑动窗口
+
+
+拥塞控制
+慢启动，快重传
+
+
+
+</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/TCP的两个窗口/">TCP的两个窗口</a></h3></div><div class="post-content"><p>
+滑动窗口是接收数据端使用的窗口大小，用来告知发送端接收端的缓存大小，以此控制发送端发送的数据大小，从而达到流量控制的目的，由接收端的rwnd：接收端窗口（receiver window）控制。
+拥塞窗口，发送端主动控制cwnd，有慢启动（cwnd初始值为1，指数启动），拥塞避免（到达ssthresh后，开始尝试...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/TCP的拥塞控制，具体过程是怎么样的/">TCP的拥塞控制，具体过程是怎么样的</a></h3></div><div class="post-content"><p></p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/TCP和UDP的区别/">TCP和UDP的区别</a></h3></div><div class="post-content"><p>
+TCP协议可靠；UDP协议不可靠
+TCP协议是面向连接；UDP协议采用无连接
+TCP协议负载高，适合传输大量数据
+TCP协议的发送方要确认接收方是否收到数据段
+TCP协议采用窗口技术和流控制
+TCP保证数据正确性，UDP可能丢包
+TCP保证数据顺序，UDP不保证
+UDP程序结构较简单
+
+</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/api_gateway 高可用/">api_gateway 高可用的方案</a></h3></div><div class="post-content"><p>
+api_gateway 采用负载均衡部署方式，避免单点故障。独占方式部署，避免资源不足
+做流控和熔断，比如限制最大请求数和请求频率。对同时处于 pendding 状态的 HTTP 请求进行数量限制，避免服务雪崩。
+对 api_gateway 做可用性监控，如出现一定程度的不可用，自动重启服务。
+
+</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/free -h，buffers 和cached有什么不同/">free -h，buffers 和 cached 有什么不同？</a></h3></div><div class="post-content"><p>
+cached 缓存是把读取过的数据保存起来，重新读取时若命中，就不去读硬盘了。数据会根据访问频率组织。
+buffer 缓冲是根据磁盘的读写设计的，把分散的写操作集中，减少磁盘碎片，提高性能。
+buffer 是即将要被写入磁盘的，而 cache 是被从磁盘中读出来的。
+
+</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/close wait和time wait/">close wait 和time wait 是什么？如何排查？有什么意义？</a></h3></div><div class="post-content"><p>TIME WAIT主动关闭方在收到被关闭方的FIN后会处于并长期（2个MSL时间，建议值是2min）的状态，大约是1-4分钟。然后由操作系统回头连接并将TCP连接设为CLOSED初始状态。
+CLOSE WAIT是被动关闭连接形成的，被动端收到主动端的FIN时候，发送ACK确认，并进入CLOSE_WAIT的状态，如...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/go函数中，返回值未命名，发生了panic，但是在函数内recover了。函数返回什么值？/">go函数中，返回值未命名，发生了panic，但是在函数内recover了。函数返回什么值？</a></h3></div><div class="post-content"><p>返回 panic value
+</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/">上一页</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/page/3/">下一页</a></li></ul></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>

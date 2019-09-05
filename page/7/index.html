@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="WWei"><title>嘟嘟喵喵小白秋裤</title><meta name="description" content="没有困难创造困难~"><meta name="keywords" content="GO,PHP,K8S,Docker,Kubernetes,Istio,项目管理,创业,生活"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title><a href="/">嘟嘟喵喵小白秋裤</a></h3><div class="description"><p>没有困难创造困难~</p></div></div></div><ul class="social-links"><li><a href="http://github.com/lyzhang1999"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div><script async src="https://www.googletagmanager.com/gtag/js?id=UA-35043271-2"></script><script type="text/javascript">window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-35043271-2');</script></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a class="current" href="/">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li></div><div class="avatar"><img src="/images/logo.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/设计HTTP协议/">设计HTTP协议</a></h3></div><div class="post-content"><p>设计HTTP协议，A端发送 AAAA，至少让B端知道AAAA已发送完成
+用 Content-Length 告诉B传输的数据长度
+Content-Length = chunked 的话，最后一个块大小为0，说明本次数据发送完成
+
+</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/进程和线程的区别/">进程和线程的区别</a></h3></div><div class="post-content"><p>进程和线程的区别
+进程是资源分配的最小单位，线程是程序执行的最小单位。
+进程拥有自己的独立地址空间，线程没有独立的地址空间，他使用相同的地址空间共享数据。
+CPU 切换一个线程的开销比切换一个进程花销小
+创建一个线程比创建一个进程开销小
+线程占用的资源比进程占用资源小
+线程之间通信更方便，同一个进程下，线程共享全...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/进程调度算法/">进程调度算法</a></h3></div><div class="post-content"><p>
+先来先调度
+短作业优先调度
+优先级调度
+非抢占式
+抢占式
+
+
+高响应比优先调度算法
+轮转调度
+
+</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/31/进程间的通信方式和对应的同步方式/">进程间的通信方式和对应的同步方式</a></h3></div><div class="post-content"><p>
+管道：半双工的通信方式，一般只能在父子进程间使用。
+有名管道：半双工的通信方式，它允许无亲缘关系进程通信。
+信号量：可以用来控制多个进程对共享资源的访问，通常作为一种锁机制，主要用作进程间以及同一进程不同线程之间的同步手段。
+消息队列
+信号
+共享内存
+套接字（socket）go 中可以用管道实现进程的通信。
+
+</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/11/Docker 网络类型/">Docker 中的网络类型</a></h3></div><div class="post-content"><p>
+Docker 中的网络类型大致分为 5 种，分别是：Brige、Host、None 网络
+
+None 网络这种网络模式下只有容器的内部回环网络，没有其他网卡，容器无法联网，在特殊场景下可以保证容器的安全性。
+Host 网络使用 Host 网络模式可以让容器使用宿主机的 IP+端口 和外接进行通信，容器内部的端口...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-11</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Docker/" title="Docker">Docker </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/11/Kubernetes 网络基础 - Service/">Kubernetes 网络基础 - Service</a></h3></div><div class="post-content"><p>Service 简介ClusterIPService 是一组 POD 的服务对象，类似于一组 POD 的 LB（负载均衡器），负责将请求分发给 POD ，Service 会为这个 LB 提供一个 IP ，默认是 ClusterIP
+
+ClusterIP 是 Kubernetes 虚拟的 IP 地址，由系统动态分配...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-11</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Kubernetes/" title="Kubernetes">Kubernetes </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/11/Kubernetes 网络基础/">Kubernetes 网络基础</a></h3></div><div class="post-content"><p>容器间的通信同一个 POD 容器(container)共享同一个网络命名空间，他们之间可以用localhost+容器端口号进行访问。基于这种特性，Istio 的 Sidecar 就是通过此基础实现的劫持 POD 的出入流量。
+同一 Node 中 POD 间的通信同一 Node 的 POD 默认的路由地址都是虚拟网...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-11</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Kubernetes/" title="Kubernetes">Kubernetes </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/10/Istio Gateway TLS/">Istio Gateway TLS 证书配置</a></h3></div><div class="post-content"><p>为单一域名配置 TLS Ingress 网关12345678910111213141516171819$ cat &lt;&lt;EOF | kubectl apply -f -apiVersion: networking.istio.io/v1alpha3kind: Gatewaymetadata:  name...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-10</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Istio/" title="Istio">Istio </a><a class="tag" href="/tags/Kubernetes/" title="Kubernetes">Kubernetes </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/10/Spring Cloud 无法部署到 K8S 的原因/">Spring Cloud 项目部署 K8S 无法启动的原因</a></h3></div><div class="post-content"><p>CI/CD 过程中配置文件(application.yml)合并是否有异常？CI/CD 过程中，可能涉及到合并几份 YML 文件，通常，简单的话我们会用 shell 去合并，如果复杂，可能会在服务器上使用 yq 合并 yml 文件，合并过程可能导致节点信息丢失，导致无法启动 Tomcat。
+大部分情况仔细看日志信...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-10</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Kubernetes/" title="Kubernetes">Kubernetes </a><a class="tag" href="/tags/Spring-Cloud/" title="Spring Cloud">Spring Cloud </a></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2019/08/09/Pod错误排查/">Pod 错误排查</a></h3></div><div class="post-content"><p>Pod 异常排错本章介绍 Pod 运行异常的排错方法。
+一般来说，无论 Pod 处于什么异常状态，都可以执行以下命令来查看 Pod 的状态
+
+kubectl get pod &lt;pod-name&gt; -o yaml 查看 Pod 的配置是否正确
+kubectl describe pod &lt;pod-n...</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-09</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Kubernetes/" title="Kubernetes">Kubernetes </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/page/6/">上一页</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/page/8/">下一页</a></li></ul></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>

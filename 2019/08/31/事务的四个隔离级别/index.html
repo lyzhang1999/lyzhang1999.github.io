@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="WWei"><title>事务的四个隔离级别 · 嘟嘟喵喵小白秋裤</title><meta name="description" content="事务的基本要素(ACID)
+原子性
+
+一致性
+
+隔离性
+
+持久性
+
+读未提交 Read Uncommitted（在本次事务中可以读到其他事务中没有提交的数据 - 脏数据：别人修改数据的事务尚未提交，在我的事务中也能读到）
+
+读已提交 Read Committed （只能读到其他事务提交过的数据。如果"><meta name="keywords" content="GO,PHP,K8S,Docker,Kubernetes,Istio,项目管理,创业,生活"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title><a href="/">嘟嘟喵喵小白秋裤</a></h3><div class="description"><p>没有困难创造困难~</p></div></div></div><ul class="social-links"><li><a href="http://github.com/lyzhang1999"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div><script async src="https://www.googletagmanager.com/gtag/js?id=UA-35043271-2"></script><script type="text/javascript">window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-35043271-2');</script></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img src="/images/logo.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>事务的四个隔离级别</a></h3></div><div class="post-content"><h3 id="事务的基本要素-ACID"><a href="#事务的基本要素-ACID" class="headerlink" title="事务的基本要素(ACID)"></a>事务的基本要素(ACID)</h3><ol>
+<li><p>原子性</p>
+</li>
+<li><p>一致性</p>
+</li>
+<li><p>隔离性</p>
+</li>
+<li><p>持久性</p>
+</li>
+<li><p>读未提交 Read Uncommitted（在本次事务中可以读到其他事务中没有提交的数据 - 脏数据：别人修改数据的事务尚未提交，在我的事务中也能读到）</p>
+</li>
+<li><p>读已提交 Read Committed （只能读到其他事务提交过的数据。如果在当前事务中，其他事务有提交，则两次读取结果不同：别人修改数据的事务已经提交，才能读到）</p>
+</li>
+<li><p>可重复读 Repeatable Read （默认，保证了事务中每次读取结果都相同，而不管其他事物是否已经提交。会出现幻读）</p>
+</li>
+<li><p>序列化 Serializable （隔离级别中最严格的，开启一个 serializable 事务，那么其他事务对数据表的写操作都会被挂起）</p>
+</li>
+</ol>
+<h3 id="脏读"><a href="#脏读" class="headerlink" title="脏读"></a>脏读</h3><p>会话2读取到了会话1还没提交的修改数据事务的<code>新</code>数据，称为脏读，对A来说就是读取到了脏数据。</p>
+<h3 id="幻读"><a href="#幻读" class="headerlink" title="幻读"></a>幻读</h3><p>系统管理员A将数据库中所有学生的成绩从具体分数改为ABCDE等级，但是系统管理员B就在这个时候插入了一条具体分数的记录，当系统管理员A改结束后发现还有一条记录没有改过来，就好像发生了幻觉一样，这就叫幻读。</p>
+<h3 id="不可重复读"><a href="#不可重复读" class="headerlink" title="不可重复读"></a>不可重复读</h3><p>事务 A 多次读取同一数据，事务 B 在事务A多次读取的过程中，对数据作了更新并提交，导致事务A多次读取同一数据时，结果 不一致。</p>
+<p>小结：不可重复读的和幻读很容易混淆，不可重复读侧重于修改，幻读侧重于新增或删除。解决不可重复读的问题只需锁住满足条件的行，解决幻读需要锁表</p>
+<table>
+<thead>
+<tr>
+<th>隔离级别</th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>读未提交</td>
+<td>可能</td>
+<td>可能</td>
+<td>可能</td>
+</tr>
+<tr>
+<td>读已提交</td>
+<td>不可能</td>
+<td>可能</td>
+<td>可能</td>
+</tr>
+<tr>
+<td>可重复读</td>
+<td>不可能</td>
+<td>不可能</td>
+<td>可能</td>
+</tr>
+<tr>
+<td>序列化</td>
+<td>不可能</td>
+<td>不可能</td>
+<td>不可能</td>
+</tr>
+</tbody></table>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-08-31</span><i class="fa fa-tag"></i><a class="tag" href="/tags/面试题/" title="面试题">面试题 </a></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" href="http://twitter.com/home?status=,http://yoursite.com/2019/08/31/事务的四个隔离级别/,嘟嘟喵喵小白秋裤,事务的四个隔离级别,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2019/08/31/不使用高级工具，只使用Linux自带的工具，你会如何debug/" title="不使用高级工具，只使用Linux自带的工具，你会如何debug？">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2019/08/31/什么是连接的半打开，半关闭状态/" title="什么是连接的半打开，半关闭状态">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
